@@ -13,7 +13,7 @@ subjects:
   name: {{ $subject.name }}
 {{- end }}
 roleRef:
- kind: Role
+ kind: ClusterRole
  name: {{ $role.name }}-clusterrole
  apiGroup: rbac.authorization.k8s.io
 {{- end }}

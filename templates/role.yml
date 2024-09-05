@@ -6,7 +6,7 @@ kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
  namespace: {{ $role.namespace }}
- name: {{ $role.name }}-role
+ name: {{ $role.name }}
 rules:
 {{ toYaml $role.rules }}
 {{- end }}

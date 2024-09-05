@@ -1,5 +1,91 @@
-# Default values for rbac.
+# Default values for custom rbac.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-rbac:
+## List of serviceAccounts 
+## ref: https://kubernetes.io/docs/concepts/security/service-accounts/
+# -- Service accounts definition
+serviceAccounts:
+  # - name: serviceAccountName
+  #   enabled: true
+  #   namespace: {{ .Release.Namespace }}
+  #   createToken: true
+
+## RBAC resources
+## ref: https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+## List of roles 
+# -- Role definition
+roles:
+  # - name: roleName
+  #   enabled: true
+  #   rules:
+  #   - apiGroups: ["*"]
+  #     resources: ["*"]
+  #     verbs: ["get","watch","list"]
+  #   - apiGroups: [""]
+  #     resources: ["services/proxy","services/portforward"]
+  #     verbs: ["get","create","list"]
+  #   - apiGroups: [""]
+  #     resources: ["pods/portforward"]
+  #     verbs: ["get","create","list"]
+
+## List of role bindings
+# -- Role bindings definition
+roleBindings:
+  # - name: roleBindingName
+  #   enabled: true
+  #   namespace: default
+  #   role: 
+  #     kind: Role
+  #     name: roleName
+  #   subjects:
+  #     - name: serviceAccountName
+  #       kind: ServiceAccount
+  #     - name: groupName
+  #       kind: Group
+  #     - name: userName
+  #       kind: User
+  # - name: roleBindingNameForClusterRole
+  #   enabled: true
+  #   namespace: default
+  #   role: 
+  #     kind: ClusterRole
+  #     name: clusterRoleName
+  #   subjects:
+  #     - name: serviceAccountName
+  #       kind: ServiceAccount
+  #     - name: groupName
+  #       kind: Group
+  #     - name: userName
+  #       kind: User
+
+## List of cluster roles
+# -- Cluster role definition
+clusterRoles:
+  # - name: clusterRoleName
+  #   enabled: true
+  #   rules:
+  #   - apiGroups: ["*"]
+  #     resources: ["*"]
+  #     verbs: ["get","watch","list"]
+  #   - apiGroups: [""]
+  #     resources: ["services/proxy","services/portforward"]
+  #     verbs: ["get","create","list"]
+  #   - apiGroups: [""]
+  #     resources: ["pods/portforward"]
+  #     verbs: ["get","create","list"]
+
+## List of cluster role bindings
+# -- Cluster role bindings definition
+clusterRoleBindings:
+  # - name: clusterRoleBindingName
+  #   enabled: true
+  #   role: clusterRoleName
+  #   subjects:
+  #     - name: serviceAccountName
+  #       kind: ServiceAccount
+  #     - name: groupName
+  #       kind: Group
+  #     - name: userName
+  #       kind: User

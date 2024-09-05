@@ -1,7 +1,7 @@
 apiVersion: v2
 description: A Helm chart for customized RBAC
 name: custom-rbac
-type: security
+type: application
 version: 0.1.0
 maintainers: 
   - name: Asteriosoft DevOps Team

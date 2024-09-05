@@ -1,5 +1,5 @@
-{{- if .Values.rbac.clusterRoles }}
-{{- range $role := .Values.rbac.clusterRoles }}
+{{- if .Values.clusterRoles }}
+{{- range $role := .Values.clusterRoles }}
 {{- if $role.enabled }}
 ---
 kind: ClusterRole

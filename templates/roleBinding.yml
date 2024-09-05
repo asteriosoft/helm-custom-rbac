@@ -1,5 +1,5 @@
-{{- if .Values.rbac.roleBindings }}
-{{- range $bind := .Values.rbac.roleBindings  }}
+{{- if .Values.roleBindings }}
+{{- range $bind := .Values.roleBindings  }}
 {{- if $bind.enabled }}
 ---
 kind: RoleBinding

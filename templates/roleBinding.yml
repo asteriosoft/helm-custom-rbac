@@ -12,7 +12,7 @@ subjects:
 - apiGroup: {{ ternary "" "rbac.authorization.k8s.io" (eq $subject.kind "ServiceAccount") }}
   kind: {{ $subject.kind }}
   name: {{ $subject.name }}
-  namespace: {{ $bind.namespace }}
+  namespace: {{ ternary $subject.namespace "" (eq $subject.kind "ServiceAccount") }}
 {{- end }}
 roleRef:
  kind: {{ $bind.role.kind | default "Role"  }}

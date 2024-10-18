@@ -42,6 +42,7 @@ roleBindings:
   #   subjects:
   #     - name: serviceAccountName
   #       kind: ServiceAccount
+  #       namespace: default
   #     - name: groupName
   #       kind: Group
   #     - name: userName
@@ -55,6 +56,7 @@ roleBindings:
   #   subjects:
   #     - name: serviceAccountName
   #       kind: ServiceAccount
+  #       namespace: default
   #     - name: groupName
   #       kind: Group
   #     - name: userName
@@ -85,6 +87,7 @@ clusterRoleBindings:
   #   subjects:
   #     - name: serviceAccountName
   #       kind: ServiceAccount
+  #       namespace: default
   #     - name: groupName
   #       kind: Group
   #     - name: userName

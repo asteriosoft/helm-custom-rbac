@@ -8,9 +8,10 @@ metadata:
  name: {{ $bind.name }}
 subjects:
 {{- range $subject := $bind.subjects }}
-- apiGroup: rbac.authorization.k8s.io
+- apiGroup: {{ ternary "" "rbac.authorization.k8s.io" (eq $subject.kind "ServiceAccount") }}
   kind: {{ $subject.kind }}
   name: {{ $subject.name }}
+  namespace: {{ ternary $subject.namespace "" (eq $subject.kind "ServiceAccount") }}
 {{- end }}
 roleRef:
  kind: ClusterRole
